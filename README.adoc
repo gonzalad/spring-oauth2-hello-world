@@ -1,0 +1,15 @@
+= Spring OAuth2 Hello World Sample
+
+This little project shows how to secure a REST service with Spring OAuth2.
+
+Usage :
+
+. start `org.gonzalad.AuthorizationServerApplication` from module oauth-server
+. start `org.gonzalad.Application` from module oauth-service
+. open url http://localhost:8080 in your browser
+. oauth-server application asks you for your user/pwd +
+  Just enter acme/acmesecret
+. oauth-server asks you if you want to give oauth-service the necessary permissions +
+  Just select yes
+. oauth-service displays the hello world message  
+

@@ -1,0 +1,24 @@
+server:
+  port: 9999
+#  ssl:
+#    keyStore: classpath:keystore.p12
+#    key-store-password: password
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+  contextPath: /uaa
+security:
+  oauth2:
+    authorization:
+      checkTokenAccess: isAuthenticated()
+      tokenKeyAccess: isAuthenticated()
+#sample client - create BaseClientDetailsConfiguration if you need to have a real application
+    client:
+      clientId: acme
+      clientSecret: acmesecret
+      scope: openid
+#security:
+#  user: user
+#  password: password
+logging:
+  level:
+    org.springframework.security: DEBUG

@@ -1,0 +1,31 @@
+spring.profiles.active: oauth2.simple
+---
+spring.profiles: oauth2.simple
+security:
+  oauth2:
+    client:
+      clientId: acme
+      clientSecret: acmesecret
+      accessTokenUri: http://localhost:9999/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
+#      clientAuthenticationScheme: form
+#      scope: openid
+    resource:
+#      userInfoUri: http://localhost:9999/uaa/user
+      tokenInfoUri: http://localhost:9999/uaa/oauth/check_token
+---
+spring.profiles: oauth2.github
+security:
+  oauth2:
+    client:
+#      clientId: bd1c0a783ccdd1c9b9e4
+#      clientSecret: 1a9030fbca47a5b2c28e92f19050bb77824b5ad1
+      clientId: 25083232babd154b1631
+      clientSecret: de480bbf5a8962f3060d1f462b6b159c26113c41
+      accessTokenUri: https://github.com/login/oauth/access_token
+      userAuthorizationUri: https://github.com/login/oauth/authorize
+      clientAuthenticationScheme: form
+      scope: user:email,notifications
+    resource:
+      userInfoUri: https://api.github.com/user
+      preferTokenInfo: false
